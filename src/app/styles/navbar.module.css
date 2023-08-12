@@ -1,0 +1,479 @@
+.navbar_container
+{
+    background-color: transparent;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 70px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 0.3s ease-in;
+}
+
+.navbar_shadow
+{
+    box-shadow: 0px 10px 30px -10px rgba(2, 12, 27, 0.7);
+    transition: 0.3s ease-in;
+}
+
+.logo_container
+{
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    animation-name: fadeInLogo;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    border-radius: 2px;
+    overflow: hidden;
+    height: 45px;
+    width: 45px;
+    background-color: var(--heading);
+}
+
+.logo-container img
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+}
+
+.ham_icon
+{
+    display: none;
+    height: 35px;
+    width: 45px;
+    animation-name: hamIconFadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+    position: relative;
+    z-index: 5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.ham_icon span
+{
+    position: relative;
+    height: 3px;
+    width: 30px;
+    background-color: var(--primary);
+    border-radius: 1px;
+    transition: 0.4s ease-in-out;
+}
+
+.remove
+{
+    opacity: 0;
+}
+
+
+.rotateDown
+{
+    animation-name: rotateDownAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes rotateDownAnimation
+{
+    from 
+    {
+        transform: translateY(0px) rotate(0deg);
+
+    }
+    to 
+    {
+
+        transform: translateY(7.9px) rotate(45deg);
+    }
+}
+
+.rotateUp
+{
+    animation-name: rotateUpAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateUpAnimation
+{
+    from 
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    to 
+    {
+
+        transform: translateY(-7.9px) rotate(-45deg);
+    }
+}
+
+.removeRotateDown
+{
+    animation-name: removeRotateDownAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes removeRotateDownAnimation
+{
+    from 
+    {
+        transform: translateY(7.9px) rotate(45deg);
+    }
+    to 
+    {
+
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.removeRotateUp
+{
+    animation-name: removeRotateUpAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes removeRotateUpAnimation
+{
+    from 
+    {
+        transform: translateY(-7.9px) rotate(-45deg);
+    }
+    to 
+    {
+
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes hamIconFadeIn
+{
+    from 
+    {
+        /* transform: translateX(30px); */
+        opacity: 0;
+    }
+    to 
+    {
+
+        /* transform: translateX(0px); */
+        opacity: 1;
+    }
+}
+
+.ham_tabs
+{
+    display: none;
+    z-index: 4;
+    height: 100vh;
+    width: min(75vw, 400px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 40px;
+    transition: 0.3s ease-in-out;
+    background-color: var(--navy);
+}
+
+.ham_tabs_show
+{
+    transform: translateX(0%);
+}
+
+.ham_tabs_hide
+{
+    transform: translateX(100%);
+}
+
+.ham_tabs ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.ham_tabs ul li
+{
+    cursor: pointer;
+    font-family: var(--primary-font);
+    color: var(--heading);
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    padding: 5px 3px;
+}
+
+.ham_tabs ul li:hover
+{
+    color: var(--primary);
+}
+
+.ham_tabs a
+{
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--primary);
+    padding: 9px 17px 9px 17px;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+.ham_tabs a:hover
+{
+    background-color: var(--hover);
+}
+
+.blur
+{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    animation-name: blurFadeIn;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    /* pointer-events: none; */
+}
+
+@keyframes blurFadeIn
+{
+    from 
+    {
+        backdrop-filter: blur(0px);
+        opacity: 0;
+    }
+    to 
+    {
+
+        backdrop-filter: blur(2px);
+        opacity: 1;
+    }
+}
+
+.nav_tabs
+{
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav_tabs ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.nav_tabs ul li
+{
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    color: var(--heading);
+    font-family: var(--primary-font);
+    font-size: 13.5px;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+.nav_tabs ul li:hover
+{
+    color: var(--primary);
+}
+
+.nav_tabs ul li:nth-child(1)
+{
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    /* animation-delay: 200ms; */
+}
+
+.nav_tabs ul li:nth-child(2)
+{
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 200ms;
+}
+.nav_tabs ul li:nth-child(3)
+{
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 400ms;
+}
+.nav_tabs ul li:nth-child(4)
+{
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 600ms;
+}
+.nav_tabs ul li:nth-child(5)
+{
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 800ms;
+}
+
+.nav_tabs a
+{
+    text-decoration: none;
+    font-size: 13.5px;
+    color: var(--primary);
+    padding: 9px 17px 9px 17px;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    animation-name: fadeInNavigation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-delay: 800ms;
+    letter-spacing: 1px;
+}
+
+.nav_tabs a:hover
+{
+    background-color: var(--hover);
+}
+
+@keyframes fadeInNavigation
+{
+    from 
+    {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to 
+    {
+
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLogo
+{
+    from 
+    {
+        opacity: 0;
+    }
+    to 
+    {
+
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* --------responsiveness-------- */
+
+@media only screen and (max-width: 1080px)
+{
+    .navbar_container
+    {
+        width: 100%;
+        padding: 0px 30px;
+    }
+
+    .nav_tabs ul li
+    {
+        font-size: 13px;
+    }
+
+    .nav_tabs a
+    {
+        font-size: 13px;
+    }
+}
+
+
+
+/* ---768px--- */
+
+@media only screen and (max-width: 768px)
+{
+
+    .navbar_container
+    {
+        padding: 0px 20px;
+    }
+
+    .nav_tabs
+    {
+        display: none;
+    }
+
+    .ham_icon
+    {
+        display: flex;
+        
+    }
+
+    .ham_tabs
+    {
+        display: flex;
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 480px)
+{
+    .ham_tabs ul li
+    {
+        font-size: 13px;
+    }
+
+    .ham_tabs a
+    {
+        font-size: 13px;
+    }
+
+    .logo-container
+    {
+        height: 45px;
+        width: 45px;
+    }
+}
